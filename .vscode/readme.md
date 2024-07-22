@@ -1,4 +1,4 @@
-#simple To DO LIst
+#simple To Do List
 
 ##this project created or designed with html and css with little javaScript
 
