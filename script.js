@@ -31,6 +31,7 @@
 //   }
 // };
 
+// edited
 const tasks = document.querySelector("#tasks");
 const newtask = document.querySelector("#newtask input");
 const addTask = document.querySelector("#push");
