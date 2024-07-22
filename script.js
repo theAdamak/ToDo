@@ -47,10 +47,10 @@ function loadTasks() {
     `;
   });
 
-  updateEventListeners();
+  deleteTask();
 }
 
-function saveTasks() {
+function updateLS() {
   const taskElements = document.querySelectorAll(".task");
   const tasksToSave = [];
   taskElements.forEach((taskElement) => {
@@ -61,12 +61,12 @@ function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasksToSave));
 }
 
-function updateEventListeners() {
+function deleteTask() {
   const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((button) => {
     button.onclick = function () {
       this.parentElement.remove();
-      saveTasks();
+      updateLS();
     };
   });
 
@@ -74,7 +74,7 @@ function updateEventListeners() {
   tasksElements.forEach((taskElement) => {
     taskElement.onclick = function () {
       this.classList.toggle("completed");
-      saveTasks();
+      updateLS();
     };
   });
 }
@@ -94,7 +94,7 @@ addTask.onclick = function () {
 
     newtask.value = "";
 
-    updateEventListeners();
+    deleteTask();
     saveTasks();
   }
 };
